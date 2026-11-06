@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR" id="raiz-html">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thiago Felix | Portfólio Mecha</title>
+
+  <!-- Fontes do Google: Orbitron (títulos) e Rajdhani (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Ícones do Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Folha de estilo principal -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Cabeçalho fixo com navegação -->
+  <header class="cabecalho">
+    <div class="conteiner conteudo-cabecalho">
+      <a href="#inicio" class="logotipo">
+        <span class="logotipo-destaque">TF</span> // HUB
+      </a>
+
+      <nav class="navegacao" id="navegacao-principal">
+        <ul class="lista-navegacao">
+          <li><a href="#inicio" class="link-navegacao">Início</a></li>
+          <li><a href="#sobre" class="link-navegacao">Sobre Mim</a></li>
+          <li><a href="#projetos" class="link-navegacao">Projetos</a></li>
+          <li><a href="#experiencia" class="link-navegacao">Experiência</a></li>
+          <li><a href="#tecnologias" class="link-navegacao">Tecnologias</a></li>
+          <li><a href="#contato" class="link-navegacao">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- Ações do cabeçalho agrupadas na extremidade direita -->
+      <div class="acoes-cabecalho">
+        <button id="botao-tema" class="botao-tema" type="button" aria-label="Alternar tema de cores">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <!-- Botão do menu hambúrguer (aparece só em telas pequenas) -->
+        <button id="botao-menu" class="botao-menu" type="button" aria-label="Abrir menu de navegação"
+          aria-expanded="false" aria-controls="navegacao-principal">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteúdo principal da página -->
+  <main>
+    <!-- Seção: Início -->
+    <section id="inicio" class="secao secao-inicio">
+      <div class="conteiner conteudo-inicio">
+        <!-- Coluna de Informações e Botões -->
+        <div class="inicio-informacoes">
+          <p class="etiqueta-sistema">// INICIALIZANDO SISTEMA</p>
+          <h1 class="titulo-principal">Thiago Felix da Silva</h1>
+          <p class="perfil-profissional">Game, Software e Web Developer</p>
+          <p class="frase-principal">Curiosidade que vira código. Criatividade que vira
+            projeto. Tecnologia que vira realidade.</p>
+
+          <div class="grupo-botoes">
+            <a href="#projetos" class="botao botao-primario">
+              <span>Ver Projetos</span>
+              <i class="fa-solid fa-arrow-down"></i>
+            </a>
+            <a href="/download/Curriculo - Thiago Felix da Silva - 2026.pdf" class="botao botao-secundario"
+              target="_blank" rel="noopener noreferrer">
+              <span>Baixar Currículo</span>
+              <i class="fa-solid fa-file-arrow-down"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Coluna do Carrossel de Imagens -->
+        <div class="inicio-visual">
+          <div class="carrossel-mecha" id="carrossel-inicio">
+            <img src="img/mecha-preto-frontal.png" data-dark="img/mecha-preto-frontal.png"
+              data-light="img/mecha-branco-frontal.png"
+              alt="Mecha futurista de frente, com asas abertas de energia e armadura de painéis angulares"
+              class="imagem-slide imagem-tema">
+            <img src="img/controle-preto.png" data-dark="img/controle-preto.png" data-light="img/controle-branco.png"
+              alt="Controle de videogame futurista estilo mecha com circuitos luminosos e botões coloridos"
+              class="imagem-slide imagem-tema">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção: Sobre Mim -->
+    <section id="sobre" class="secao secao-sobre">
+      <div class="conteiner">
+        <div class="cabecalho-secao">
+          <p class="etiqueta-secao">// PERFIL E VALORES</p>
+          <h2 class="titulo-secao">Sobre Mim</h2>
+        </div>
+
+        <div class="painel-mecha conteudo-sobre">
+          <p class="saudacao-sobre">Olá! Seja bem-vindo ao meu espaço!</p>
+          <p class="texto-sobre">Sou uma pessoa curiosa por natureza, apaixonada por aprender
+            coisas novas, explorar tecnologias e transformar ideias em projetos. Acredito que a criatividade e a
+            capacidade de resolver problemas caminham juntas e que, muitas vezes, as melhores soluções surgem quando
+            olhamos para os desafios por uma perspectiva diferente, pensamos fora da caixa e ousamos experimentar novas
+            possibilidades.</p>
+          <p class="texto-sobre">Tenho grande interesse por tecnologia, programação,
+            desenvolvimento de jogos e game design, além de drones e tudo aquilo que nos permite explorar, criar e ir
+            além do convencional. Também sou apaixonado pela cultura geek, nerd e japonesa, universos que alimentam
+            minha imaginação e inspiram constantemente minha criatividade.</p>
+          <p class="texto-sobre">Gosto de encarar cada novo conhecimento como uma oportunidade de
+            desenvolver habilidades, descobrir novas possibilidades e transformar a curiosidade em algo concreto. Seja
+            aprendendo uma nova ferramenta, desenvolvendo um projeto ou buscando uma solução para um problema, estou
+            sempre em busca de maneiras de unir conhecimento, criatividade e tecnologia para criar algo único.</p>
+
+          <div class="destaque-sobre">
+            <p><strong>Mais do que acompanhar a evolução da tecnologia, quero fazer parte
+                dela: aprender, experimentar, criar e transformar ideias em realidade.</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção: Projetos -->
+    <section id="projetos" class="secao secao-projetos">
+      <div class="conteiner">
+        <div class="cabecalho-secao">
+          <p class="etiqueta-secao">// SISTEMA DE OPERAÇÕES</p>
+          <h2 class="titulo-secao">Projetos</h2>
+        </div>
+
+        <!-- Seletor de Abas Mecha -->
+        <div class="navegacao-abas-projetos">
+          <button type="button" class="botao-aba ativa" data-aba="pessoal">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>Projetos Pessoais</span>
+          </button>
+          <button type="button" class="botao-aba" data-aba="profissional">
+            <i class="fa-solid fa-briefcase"></i>
+            <span>Projetos Profissionais</span>
+          </button>
+        </div>
+
+        <!-- Conteúdo da Aba Pessoal (Inicialmente Visível) -->
+        <div id="painel-pessoal" class="painel-aba-projetos painel-aba-ativo">
+          <!-- Os cartões de projetos pessoais são renderizados dinamicamente pelo JavaScript -->
+        </div>
+
+        <!-- Conteúdo da Aba Profissional (Inicialmente Oculto) -->
+        <div id="painel-profissional" class="painel-aba-projetos">
+          <!-- Os cartões de projetos profissionais são renderizados dinamicamente pelo JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção: Experiência -->
+    <section id="experiencia" class="secao secao-experiencia">
+      <div class="conteiner">
+        <div class="cabecalho-secao">
+          <p class="etiqueta-secao">// REGISTRO OPERACIONAL</p>
+          <h2 class="titulo-secao">Experiência</h2>
+        </div>
+
+        <div class="lista-experiencias" id="lista-experiencias">
+          <!-- Os cartões de experiência são renderizados dinamicamente pelo JavaScript -->
+        </div>
+
+        <!-- Bloco de Download do Currículo -->
+        <div class="area-curriculo painel-mecha">
+          <div class="texto-curriculo">
+            <h3 class="titulo-curriculo">Currículo Profissional</h3>
+            <p class="subtitulo-curriculo">Faça o download do documento completo com
+              todas as qualificações técnicas e acadêmicas.</p>
+          </div>
+          <a href="/download/Curriculo - Thiago Felix da Silva - 2026.pdf" class="botao botao-primario" target="_blank"
+            rel="noopener noreferrer">
+            <span>Baixar Currículo</span>
+            <i class="fa-solid fa-file-arrow-down"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção: Tecnologias -->
+    <section id="tecnologias" class="secao secao-tecnologias">
+      <div class="conteiner">
+        <div class="cabecalho-secao">
+          <p class="etiqueta-secao">// ARSENAL TÉCNICO</p>
+          <h2 class="titulo-secao">Tecnologias</h2>
+        </div>
+
+        <div class="grade-tecnologias">
+          <!-- Card 1: Linguagens Humanas -->
+          <article class="painel-mecha cartao-grupo-tecnologia">
+            <div class="cabecalho-grupo-tecnologia">
+              <i class="fa-solid fa-language icone-grupo"></i>
+              <h3 class="titulo-grupo-tecnologia">Linguagens Humanas</h3>
+            </div>
+            <div class="lista-etiquetas-tecnologia">
+              <span class="item-etiqueta-tecnologia"><i class="fa-solid fa-comment-dots"></i> Português</span>
+              <span class="item-etiqueta-tecnologia"><i class="fa-solid fa-comment-dots"></i> Inglês</span>
+              <span class="item-etiqueta-tecnologia"><i class="fa-solid fa-comment-dots"></i> Espanhol</span>
+            </div>
+          </article>
+
+          <!-- Card 2: Programação e Web -->
+          <article class="painel-mecha cartao-grupo-tecnologia">
+            <div class="cabecalho-grupo-tecnologia">
+              <i class="fa-solid fa-code icone-grupo"></i>
+              <h3 class="titulo-grupo-tecnologia">Programação e Web</h3>
+            </div>
+            <div class="lista-etiquetas-tecnologia">
+              <span class="item-etiqueta-tecnologia"><i class="fa-solid fa-terminal"></i> C</span>
+              <span class="item-etiqueta-tecnologia"><i class="fa-solid fa-terminal"></i> C++</span>
+              <span class="item-etiqueta-tecnologia"><i class="fa-brands fa-js"></i> JavaScript</span>
+              <span class="item-etiqueta-tecnologia"><i class="fa-solid fa-code"></i> TypeScript</span>
+              <span class="item-etiqueta-tecnologia"><i class="fa-brands fa-python"></i> Python</span>
+              <span class="item-etiqueta-tecnologia"><i class="fa-brands fa-html5"></i> HTML 5</span>
+              <span class="item-etiqueta-tecnologia"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+            </div>
+          </article>
+
+          <!-- Card 3: Programas e Softwares -->
+          <article class="painel-mecha cartao-grupo-tecnologia">
+            <div class="cabecalho-grupo-tecnologia">
+              <i class="fa-solid fa-cubes icone-grupo"></i>
+              <h3 class="titulo-grupo-tecnologia">Programas</h3>
+            </div>
+            <div class="lista-etiquetas-tecnologia">
+              <span class="item-etiqueta-tecnologia"><i class="fa-solid fa-film"></i> After Effects</span>
+              <span class="item-etiqueta-tecnologia"><i class="fa-solid fa-cube"></i> Blender</span>
+              <span class="item-etiqueta-tecnologia"><i class="fa-solid fa-palette"></i> Canva</span>
+              <span class="item-etiqueta-tecnologia"><i class="fa-solid fa-table"></i> Excel</span>
+              <span class="item-etiqueta-tecnologia"><i class="fa-brands fa-figma"></i> Figma</span>
+              <span class="item-etiqueta-tecnologia"><i class="fa-solid fa-bezier-curve"></i> Illustrator</span>
+              <span class="item-etiqueta-tecnologia"><i class="fa-solid fa-image"></i> Photoshop</span>
+              <span class="item-etiqueta-tecnologia"><i class="fa-solid fa-file-powerpoint"></i> PowerPoint</span>
+              <span class="item-etiqueta-tecnologia"><i class="fa-solid fa-video"></i> Premiere</span>
+              <span class="item-etiqueta-tecnologia"><i class="fa-solid fa-file-word"></i> Word</span>
+            </div>
+          </article>
+
+          <!-- Card 4: Game Engines -->
+          <article class="painel-mecha cartao-grupo-tecnologia">
+            <div class="cabecalho-grupo-tecnologia">
+              <i class="fa-solid fa-gamepad icone-grupo"></i>
+              <h3 class="titulo-grupo-tecnologia">Game Engines</h3>
+            </div>
+            <div class="lista-etiquetas-tecnologia">
+              <span class="item-etiqueta-tecnologia"><i class="fa-solid fa-gamepad"></i> Unreal 5</span>
+              <span class="item-etiqueta-tecnologia"><i class="fa-brands fa-unity"></i> Unity</span>
+              <span class="item-etiqueta-tecnologia"><i class="fa-solid fa-bolt"></i> GDevelop</span>
+              <span class="item-etiqueta-tecnologia"><i class="fa-solid fa-gear"></i> Godot</span>
+              <span class="item-etiqueta-tecnologia"><i class="fa-solid fa-puzzle-piece"></i> Scratch</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção: Contato -->
+    <section id="contato" class="secao secao-contato">
+      <div class="conteiner">
+        <div class="cabecalho-secao">
+          <p class="etiqueta-secao">// CANAL DE COMUNICAÇÃO</p>
+          <h2 class="titulo-secao">Contato</h2>
+        </div>
+
+        <div class="grade-contato">
+          <!-- Coluna 1: canais diretos -->
+          <article class="painel-mecha cartao-canais-contato">
+            <h3 class="titulo-bloco-contato">Canais Diretos</h3>
+            <p class="texto-contato">Quer conversar sobre um projeto ou uma oportunidade?
+              Envie uma mensagem pelo formulário ou fale comigo diretamente.</p>
+
+            <div class="lista-canais-contato">
+              <a href="mailto:thiagofelix.contato@gmail.com" class="link-contato">
+                <i class="fa-solid fa-envelope"></i>
+                <span>thiagofelix.contato@gmail.com</span>
+              </a>
+              <a href="https://wa.me/5545999556303" target="_blank" rel="noopener noreferrer" class="link-contato">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>(45) 9 9955-6303</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Coluna 2: formulário que envia e-mail -->
+          <form class="painel-mecha formulario-contato" id="formulario-contato" novalidate>
+            <h3 class="titulo-bloco-contato">Envie uma Mensagem</h3>
+
+            <div class="campo-formulario">
+              <label for="campo-nome">Nome</label>
+              <input type="text" id="campo-nome" name="name" class="entrada-formulario" required autocomplete="name">
+              <span class="mensagem-erro-campo" id="erro-campo-nome" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="campo-formulario">
+              <label for="campo-email">E-mail</label>
+              <input type="email" id="campo-email" name="email" class="entrada-formulario" required
+                autocomplete="email">
+              <span class="mensagem-erro-campo" id="erro-campo-email" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="campo-formulario">
+              <label for="campo-assunto">Assunto</label>
+              <select id="campo-assunto" name="subject" class="entrada-formulario" required>
+                <option value="" disabled selected>Selecione um assunto</option>
+                <option value="recrutamento">Recrutamento</option>
+                <option value="freelance">Freelance</option>
+                <option value="consultoria">Consultoria</option>
+                <option value="parceria profissional">Parceria Profissional</option>
+                <option value="contato informal">Contato Informal</option>
+              </select>
+              <span class="mensagem-erro-campo" id="erro-campo-assunto" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="campo-formulario">
+              <label for="campo-mensagem">Mensagem</label>
+              <textarea id="campo-mensagem" name="message" class="entrada-formulario" rows="5" required></textarea>
+              <span class="mensagem-erro-campo" id="erro-campo-mensagem" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Campo escondido para barrar robôs de spam: pessoas não preenchem -->
+            <input type="text" name="_honey" class="campo-armadilha" tabindex="-1" autocomplete="off"
+              aria-hidden="true">
+
+            <button type="submit" class="botao botao-primario" id="botao-enviar-contato">
+              <span>Enviar Mensagem</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+
+            <p class="status-contato" id="status-contato" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé com contatos -->
+  <footer class="rodape">
+    <div class="conteiner conteudo-rodape">
+      <div class="rodape-info">
+        <p class="rodape-titulo">Thiago Felix da Silva</p>
+        <p class="rodape-subtitulo">Hub Mecha &bull; Todos os direitos reservados</p>
+      </div>
+
+      <div class="rodape-contatos">
+        <a href="mailto:thiagofelix.contato@gmail.com" class="link-contato" aria-label="E-mail">
+          <i class="fa-solid fa-envelope"></i>
+          <span>E-mail</span>
+        </a>
+        <a href="https://github.com/thiago-felix-silva" target="_blank" rel="noopener noreferrer" class="link-contato"
+          aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+          <span>GitHub</span>
+        </a>
+        <a href="[link do LinkedIn]" target="_blank" rel="noopener noreferrer" class="link-contato"
+          aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script JavaScript -->
+  <script src="script.js" defer></script>
+</body>
+
+</html>

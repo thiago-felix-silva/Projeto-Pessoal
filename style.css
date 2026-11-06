@@ -1,0 +1,1199 @@
+/* ==========================================================================
+   DESIGN SYSTEM E VARIÁVEIS GLOBAIS
+   ========================================================================== */
+:root {
+  /* Cores - Modo Escuro (Padrão Mecha) */
+  --cor-fundo: #0c0e12;
+  --cor-fundo-painel: #141820;
+  --cor-texto: #e2e8f0;
+  --cor-texto-secundario: #94a3b8;
+  --cor-borda: #283040;
+
+  /* Cores de Destaque Mecha */
+  --cor-vermelho: #e53e3e;
+  --cor-verde: #38a169;
+  --cor-dourado: #d69e2e;
+  --cor-azul: #3182ce;
+
+  /* Fontes */
+  --fonte-titulos: 'Orbitron', sans-serif;
+  --fonte-texto: 'Rajdhani', sans-serif;
+
+  /* Estrutura */
+  --largura-conteiner: 1100px;
+}
+
+/* Modo Claro */
+body.modo-claro {
+  --cor-fundo: #f4f6f9;
+  --cor-fundo-painel: #ffffff;
+  --cor-texto: #1a202c;
+  --cor-texto-secundario: #4a5568;
+  --cor-borda: #cbd5e1;
+
+  --cor-vermelho: #c53030;
+  --cor-verde: #2f855a;
+  --cor-dourado: #b7791f;
+  --cor-azul: #2b6cb0;
+}
+
+/* ==========================================================================
+   RESET E ESTILOS GERAIS
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-texto);
+  font-size: 1.125rem;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fonte-titulos);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Estrutura do container */
+.conteiner {
+  width: 100%;
+  max-width: var(--largura-conteiner);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Painel estilo mecha (cantos retos e bordas finas) */
+.painel-mecha {
+  background-color: var(--cor-fundo-painel);
+  border: 1px solid var(--cor-borda);
+  border-radius: 0;
+  padding: 1.5rem;
+}
+
+/* Espaçamento superior para compensar o cabeçalho fixo */
+main {
+  padding-top: 80px;
+}
+
+/* ==========================================================================
+   CABEÇALHO E NAVEGAÇÃO
+   ========================================================================== */
+.cabecalho {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--cor-fundo-painel);
+  border-bottom: 1px solid var(--cor-borda);
+  z-index: 100;
+}
+
+.conteudo-cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.logotipo {
+  font-family: var(--fonte-titulos);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--cor-texto);
+  flex-shrink: 0;
+}
+
+.logotipo-destaque {
+  color: var(--cor-vermelho);
+}
+
+.navegacao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lista-navegacao {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.link-navegacao {
+  font-family: var(--fonte-titulos);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--cor-texto-secundario);
+  padding: 0.5rem 0.25rem;
+  white-space: nowrap;
+}
+
+/* Grupo de botões e ações na extremidade direita */
+.acoes-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.botao-menu {
+  display: none;
+  background-color: transparent;
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-dourado);
+  font-size: 1.1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.botao-tema {
+  background-color: transparent;
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-dourado);
+  font-size: 1.1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Responsividade do cabeçalho em telas médias */
+@media (max-width: 960px) {
+  .lista-navegacao {
+    gap: 1.25rem;
+  }
+
+  .link-navegacao {
+    font-size: 0.75rem;
+  }
+}
+
+/* Menu hambúrguer: telas menores que 700px */
+@media (max-width: 700px) {
+  .conteudo-cabecalho {
+    height: 70px;
+    padding-top: 0;
+    padding-bottom: 0;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+
+  .botao-menu {
+    display: flex;
+  }
+
+  .navegacao {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-fundo-painel);
+    border-bottom: 1px solid var(--cor-borda);
+  }
+
+  .navegacao.aberta {
+    display: block;
+  }
+
+  .lista-navegacao {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  .link-navegacao {
+    display: block;
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--cor-borda);
+  }
+}
+
+/* ==========================================================================
+   SEÇÃO INÍCIO
+   ========================================================================== */
+.secao-inicio {
+  padding: 4rem 0;
+}
+
+.conteudo-inicio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.inicio-informacoes {
+  flex: 1;
+}
+
+.etiqueta-sistema {
+  font-family: var(--fonte-titulos);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: var(--cor-verde);
+  margin-bottom: 0.75rem;
+}
+
+.titulo-principal {
+  font-size: 2.75rem;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+  color: var(--cor-texto);
+}
+
+.perfil-profissional {
+  font-family: var(--fonte-titulos);
+  font-size: 1.25rem;
+  color: var(--cor-dourado);
+  margin-bottom: 1.25rem;
+  letter-spacing: 1px;
+}
+
+.frase-principal {
+  font-size: 1.05rem;
+  color: var(--cor-texto-secundario);
+  margin-bottom: 2rem;
+  max-width: 580px;
+  line-height: 1.7;
+}
+
+.grupo-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--fonte-titulos);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.85rem 1.5rem;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.botao-primario {
+  background-color: var(--cor-vermelho);
+  color: #ffffff;
+  border: 1px solid var(--cor-vermelho);
+}
+
+.botao-secundario {
+  background-color: transparent;
+  color: var(--cor-texto);
+  border: 1px solid var(--cor-borda);
+}
+
+.botao-secundario i {
+  color: var(--cor-dourado);
+}
+
+.inicio-visual {
+  flex: 1.15;
+  display: flex;
+  justify-content: center;
+}
+
+/* Carrossel estático com transição suave de fade */
+.carrossel-mecha {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 5 / 4;
+}
+
+.imagem-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.imagem-slide.slide-ativo {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Responsividade da seção Início */
+@media (max-width: 768px) {
+  .conteudo-inicio {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .titulo-principal {
+    font-size: 2rem;
+  }
+
+  .grupo-botoes {
+    justify-content: center;
+  }
+
+  .frase-principal {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .carrossel-mecha {
+    max-width: 380px;
+  }
+}
+
+/* ==========================================================================
+   SEÇÃO SOBRE MIM
+   ========================================================================== */
+.cabecalho-secao {
+  margin-bottom: 2rem;
+}
+
+.etiqueta-secao {
+  font-family: var(--fonte-titulos);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: var(--cor-verde);
+  margin-bottom: 0.25rem;
+}
+
+.titulo-secao {
+  font-size: 2.25rem;
+  color: var(--cor-texto);
+  letter-spacing: 1px;
+}
+
+.secao-sobre {
+  padding: 3rem 0;
+}
+
+.conteudo-sobre {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  line-height: 1.8;
+}
+
+.saudacao-sobre {
+  font-family: var(--fonte-titulos);
+  font-size: 1.35rem;
+  color: var(--cor-dourado);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.texto-sobre {
+  color: var(--cor-texto);
+  font-size: 1.125rem;
+}
+
+.destaque-sobre {
+  margin-top: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--cor-fundo);
+  border-left: 4px solid var(--cor-vermelho);
+  border-top: 1px solid var(--cor-borda);
+  border-right: 1px solid var(--cor-borda);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.destaque-sobre p {
+  color: var(--cor-texto);
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+/* Responsividade da seção Sobre Mim */
+@media (max-width: 768px) {
+  .titulo-secao {
+    font-size: 1.75rem;
+  }
+
+  .saudacao-sobre {
+    font-size: 1.2rem;
+  }
+
+  .texto-sobre {
+    font-size: 1.05rem;
+  }
+}
+
+/* ==========================================================================
+   SEÇÃO PROJETOS
+   ========================================================================== */
+.secao-projetos {
+  padding: 3rem 0;
+}
+
+/* Navegação das Abas */
+.navegacao-abas-projetos {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--cor-borda);
+  padding-bottom: 0.5rem;
+}
+
+.botao-aba {
+  font-family: var(--fonte-titulos);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: var(--cor-texto-secundario);
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.botao-aba.ativa {
+  color: var(--cor-dourado);
+  border: 1px solid var(--cor-borda);
+  border-bottom: 2px solid var(--cor-dourado);
+  background-color: var(--cor-fundo-painel);
+}
+
+/* Painéis de Conteúdo das Abas */
+.painel-aba-projetos {
+  display: none;
+}
+
+.painel-aba-projetos.painel-aba-ativo {
+  display: block;
+}
+
+.cartao-projeto {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+}
+
+.cartao-projeto-invertido {
+  flex-direction: row-reverse;
+}
+
+.moldura-imagem-projeto {
+  flex: 1;
+  border: 1px solid var(--cor-borda);
+  background-color: var(--cor-fundo);
+  overflow: hidden;
+}
+
+.imagem-projeto {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.informacoes-projeto {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.categoria-projeto {
+  font-family: var(--fonte-titulos);
+  font-size: 0.75rem;
+  color: var(--cor-vermelho);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid var(--cor-vermelho);
+  padding: 0.25rem 0.65rem;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.titulo-projeto {
+  font-size: 1.6rem;
+  color: var(--cor-texto);
+  letter-spacing: 1px;
+}
+
+.descricao-projeto {
+  color: var(--cor-texto-secundario);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.tecnologias-projeto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.etiqueta-tecnologia {
+  font-family: var(--fonte-titulos);
+  font-size: 0.8rem;
+  background-color: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-texto);
+  padding: 0.3rem 0.65rem;
+}
+
+.acoes-projeto {
+  margin-top: 0.5rem;
+}
+
+/* Animação com imagem deslizando sobre o texto para o lado oposto */
+@keyframes deslizar-para-direita {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes deslizar-para-esquerda {
+  0% {
+    transform: translateX(50%);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.painel-aba-ativo .animar-imagem-direita {
+  animation: deslizar-para-direita 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  position: relative;
+  z-index: 2;
+}
+
+.painel-aba-ativo .animar-texto-esquerda {
+  animation: deslizar-para-esquerda 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  position: relative;
+  z-index: 1;
+}
+
+.painel-aba-ativo .animar-imagem-esquerda {
+  animation: deslizar-para-esquerda 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  position: relative;
+  z-index: 2;
+}
+
+.painel-aba-ativo .animar-texto-direita {
+  animation: deslizar-para-direita 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsividade da seção Projetos */
+@media (max-width: 768px) {
+  .navegacao-abas-projetos {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cartao-projeto,
+  .cartao-projeto-invertido {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .titulo-projeto {
+    font-size: 1.35rem;
+  }
+
+  .descricao-projeto {
+    font-size: 1rem;
+  }
+
+  .painel-aba-ativo .animar-imagem-direita,
+  .painel-aba-ativo .animar-texto-esquerda,
+  .painel-aba-ativo .animar-imagem-esquerda,
+  .painel-aba-ativo .animar-texto-direita {
+    animation: none;
+  }
+}
+
+/* ==========================================================================
+   SEÇÃO EXPERIÊNCIA
+   ========================================================================== */
+.secao-experiencia {
+  padding: 3rem 0;
+}
+
+.lista-experiencias {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.cartao-experiencia {
+  display: flex;
+  flex-direction: column;
+  border-left: 3px solid var(--cor-dourado);
+  padding: 0;
+}
+
+.gatilho-experiencia {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  padding: 1.5rem;
+}
+
+.cabecalho-experiencia {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.info-experiencia {
+  flex: 1;
+  min-width: 0;
+}
+
+.cargo-experiencia {
+  font-size: 1.35rem;
+  color: var(--cor-texto);
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+
+.empresa-experiencia {
+  font-family: var(--fonte-titulos);
+  font-size: 0.95rem;
+  color: var(--cor-verde);
+  letter-spacing: 1px;
+  margin-top: 0.35rem;
+}
+
+.meta-experiencia {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.periodo-experiencia {
+  font-family: var(--fonte-titulos);
+  font-size: 0.85rem;
+  color: var(--cor-dourado);
+  border: 1px solid var(--cor-borda);
+  padding: 0.25rem 0.6rem;
+  background-color: var(--cor-fundo);
+  white-space: nowrap;
+}
+
+.icone-expansao {
+  color: var(--cor-dourado);
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.cartao-experiencia.aberto .icone-expansao {
+  transform: rotate(180deg);
+}
+
+.corpo-experiencia {
+  display: none;
+  padding: 1.25rem 1.5rem 1.5rem 1.5rem;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.cartao-experiencia.aberto .corpo-experiencia {
+  display: block;
+}
+
+.descricao-experiencia {
+  color: var(--cor-texto-secundario);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Área de Download do Currículo */
+.area-curriculo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  border: 1px solid var(--cor-borda);
+  border-left: 4px solid var(--cor-vermelho);
+}
+
+.titulo-curriculo {
+  font-size: 1.3rem;
+  color: var(--cor-texto);
+  letter-spacing: 1px;
+  margin-bottom: 0.25rem;
+}
+
+.subtitulo-curriculo {
+  color: var(--cor-texto-secundario);
+  font-size: 0.95rem;
+}
+
+/* Responsividade da seção Experiência */
+@media (max-width: 768px) {
+  .cabecalho-experiencia {
+    gap: 0.75rem;
+  }
+
+  .cargo-experiencia {
+    font-size: 1.1rem;
+  }
+
+  .periodo-experiencia {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.45rem;
+  }
+
+  .meta-experiencia {
+    gap: 0.6rem;
+  }
+
+  .area-curriculo {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   SEÇÃO TECNOLOGIAS
+   ========================================================================== */
+.secao-tecnologias {
+  padding: 3rem 0;
+}
+
+.grade-tecnologias {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.cartao-grupo-tecnologia {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border-top: 3px solid var(--cor-verde);
+}
+
+.cabecalho-grupo-tecnologia {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.icone-grupo {
+  color: var(--cor-verde);
+  font-size: 1.25rem;
+}
+
+.titulo-grupo-tecnologia {
+  font-size: 1.25rem;
+  color: var(--cor-texto);
+  letter-spacing: 1px;
+}
+
+.lista-etiquetas-tecnologia {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.item-etiqueta-tecnologia {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--fonte-titulos);
+  font-size: 0.85rem;
+  background-color: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-texto);
+  padding: 0.4rem 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+.item-etiqueta-tecnologia i {
+  color: var(--cor-dourado);
+  font-size: 0.85rem;
+}
+
+/* Responsividade da seção Tecnologias */
+@media (max-width: 768px) {
+  .grade-tecnologias {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .item-etiqueta-tecnologia {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.65rem;
+  }
+}
+
+/* ==========================================================================
+   SEÇÃO CONTATO
+   ========================================================================== */
+.secao-contato {
+  padding: 3rem 0;
+}
+
+.grade-contato {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.cartao-canais-contato,
+.formulario-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border-top: 3px solid var(--cor-verde);
+}
+
+.titulo-bloco-contato {
+  font-size: 1.25rem;
+  color: var(--cor-texto);
+  letter-spacing: 1px;
+}
+
+.texto-contato {
+  color: var(--cor-texto-secundario);
+  line-height: 1.7;
+}
+
+.lista-canais-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.link-contato i {
+  color: var(--cor-dourado);
+}
+
+.campo-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.campo-formulario label {
+  font-family: var(--fonte-titulos);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--cor-texto-secundario);
+}
+
+.entrada-formulario {
+  width: 100%;
+  background-color: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-texto);
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 0;
+}
+
+.entrada-formulario:focus {
+  outline: none;
+  border-color: var(--cor-dourado);
+}
+
+textarea.entrada-formulario {
+  resize: vertical;
+  min-height: 120px;
+}
+
+select.entrada-formulario {
+  cursor: pointer;
+}
+
+select.entrada-formulario option {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+.mensagem-erro-campo {
+  display: none;
+  font-size: 0.85rem;
+  color: var(--cor-vermelho);
+  line-height: 1.4;
+}
+
+.mensagem-erro-campo.visivel {
+  display: block;
+}
+
+.campo-armadilha {
+  position: absolute;
+  left: -9999px;
+}
+
+.formulario-contato .botao {
+  align-self: flex-start;
+}
+
+.formulario-contato .botao:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.status-contato {
+  min-height: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--cor-texto-secundario);
+}
+
+.status-contato.status-sucesso {
+  color: var(--cor-verde);
+}
+
+.status-contato.status-erro {
+  color: var(--cor-vermelho);
+}
+
+/* Responsividade da seção Contato */
+@media (max-width: 768px) {
+  .grade-contato {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
+.rodape {
+  background-color: var(--cor-fundo-painel);
+  border-top: 1px solid var(--cor-borda);
+  padding: 2.5rem 0;
+  margin-top: 4rem;
+}
+
+.conteudo-rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.rodape-titulo {
+  font-family: var(--fonte-titulos);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cor-texto);
+  margin-bottom: 0.25rem;
+}
+
+.rodape-subtitulo {
+  font-size: 0.9rem;
+  color: var(--cor-texto-secundario);
+}
+
+.rodape-contatos {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.link-contato {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--cor-borda);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-size: 0.95rem;
+  border-radius: 0;
+}
+
+.link-contato i {
+  color: var(--cor-verde);
+}
+
+/* Responsividade do rodapé */
+@media (max-width: 768px) {
+  .conteudo-rodape {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .rodape-contatos {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   TRANSIÇÕES E EFEITOS HOVER
+   (Todos os hovers e transitions do projeto devem ficar agrupados abaixo)
+   ========================================================================== */
+body,
+.cabecalho,
+.rodape,
+.painel-mecha,
+.link-navegacao,
+.botao-tema,
+.botao-menu,
+.entrada-formulario,
+.link-contato,
+.botao,
+.moldura-imagem-mecha,
+.destaque-sobre,
+.cartao-projeto,
+.imagem-projeto,
+.etiqueta-tecnologia,
+.botao-aba,
+.cartao-experiencia,
+.area-curriculo,
+.icone-expansao,
+.cartao-grupo-tecnologia,
+.item-etiqueta-tecnologia {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.link-navegacao:hover {
+  color: var(--cor-vermelho);
+}
+
+.botao-tema:hover {
+  border-color: var(--cor-dourado);
+  background-color: var(--cor-fundo);
+}
+
+.botao-menu:hover {
+  border-color: var(--cor-dourado);
+  background-color: var(--cor-fundo);
+}
+
+.link-contato:hover {
+  border-color: var(--cor-verde);
+  color: var(--cor-verde);
+}
+
+.logotipo:hover .logotipo-destaque {
+  color: var(--cor-dourado);
+}
+
+.botao-primario:hover {
+  background-color: #b91c1c;
+  border-color: #b91c1c;
+}
+
+.botao-secundario:hover {
+  border-color: var(--cor-dourado);
+  color: var(--cor-dourado);
+}
+
+.moldura-imagem-mecha:hover {
+  border-color: var(--cor-vermelho);
+}
+
+.destaque-sobre:hover {
+  border-color: var(--cor-dourado);
+  border-left-color: var(--cor-vermelho);
+}
+
+.cartao-projeto:hover {
+  border-color: var(--cor-dourado);
+}
+
+.cartao-projeto:hover .imagem-projeto {
+  transform: scale(1.02);
+}
+
+.etiqueta-tecnologia:hover {
+  border-color: var(--cor-verde);
+  color: var(--cor-verde);
+}
+
+.botao-aba:hover {
+  color: var(--cor-texto);
+  border-color: var(--cor-borda);
+}
+
+.cartao-experiencia:hover {
+  border-color: var(--cor-dourado);
+  border-left-color: var(--cor-verde);
+}
+
+.area-curriculo:hover {
+  border-color: var(--cor-dourado);
+  border-left-color: var(--cor-vermelho);
+}
+
+.cartao-grupo-tecnologia:hover {
+  border-color: var(--cor-dourado);
+  border-top-color: var(--cor-verde);
+}
+
+.item-etiqueta-tecnologia:hover {
+  border-color: var(--cor-verde);
+  color: var(--cor-verde);
+  transform: translateY(-2px);
+}
+
+.item-etiqueta-tecnologia:hover i {
+  color: var(--cor-vermelho);
+}
+
+.imagem-slide {
+  transition: opacity 0.8s ease-in-out;
+}
+
