@@ -105,8 +105,8 @@ const listaProjetos = [
     rotuloCategoria: '[Projeto Pessoal]',
     descricao: 'Jogo simples no estilo Space Invaders, feito totalmente no Scratch durante o curso CS50x de Harvard.',
     tecnologias: ['Scratch', 'Photoshop'],
-    imagem: 'img/Invaderz.png',
-    imagemAlt: 'Tela do jogo InvaderZ em estilo retrô pixel art espacial',
+    imagem: 'img/InvaderZ.png',
+    imagemAlt: 'Capa do jogo InvaderZ',
     link: 'https://scratch.mit.edu/projects/1219193527/',
     invertido: false // false: imagem à esquerda; true: imagem à direita
   },
